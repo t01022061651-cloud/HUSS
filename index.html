@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUSS-AI 융합 커리어 아카데미 - 프로그램 소개</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .poster {
+            width: 900px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 60px 60px 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+        
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 50%;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .program-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.25);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .hero-title {
+            font-size: 48px;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 22px;
+            font-weight: 600;
+            color: #FFF59D;
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .hero-description {
+            font-size: 18px;
+            color: rgba(255,255,255,0.95);
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .concept-section {
+            background: #f8f9ff;
+            padding: 50px 60px;
+            text-align: center;
+        }
+        
+        .concept-title {
+            font-size: 32px;
+            font-weight: 900;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        
+        .concept-highlight {
+            background: linear-gradient(135deg, #FFF59D 0%, #FFE57F 100%);
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(255, 235, 59, 0.3);
+            margin-bottom: 30px;
+        }
+        
+        .concept-main {
+            font-size: 28px;
+            font-weight: 900;
+            color: #764ba2;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        
+        .concept-sub {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .flow-steps {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 40px;
+            gap: 20px;
+        }
+        
+        .flow-step {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .flow-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 900;
+            margin: 0 auto 15px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .flow-text {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            line-height: 1.4;
+        }
+        
+        .flow-arrow {
+            font-size: 32px;
+            color: #667eea;
+            flex: 0 0 auto;
+        }
+        
+        .projects-section {
+            padding: 50px 60px;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            font-weight: 900;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            color: #666;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+        
+        .project-card {
+            background: white;
+            border: 3px solid #e8ecff;
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .project-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .project-university {
+            font-size: 22px;
+            font-weight: 900;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        
+        .project-theme {
+            font-size: 18px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .career-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        
+        .project-content {
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+        
+        .role-label {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .role-description {
+            font-size: 15px;
+            color: #333;
+            line-height: 1.7;
+            font-weight: 500;
+        }
+        
+        .project-examples {
+            margin-top: 15px;
+        }
+        
+        .examples-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #764ba2;
+            margin-bottom: 10px;
+        }
+        
+        .example-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .example-tag {
+            background: #e8ecff;
+            color: #667eea;
+            padding: 6px 14px;
+            border-radius: 15px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        
+        .impact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 50px 60px;
+            color: white;
+            text-align: center;
+        }
+        
+        .impact-title {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 30px;
+        }
+        
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .impact-item {
+            background: rgba(255,255,255,0.15);
+            padding: 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .impact-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        
+        .impact-text {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+        
+        .cta-section {
+            background: white;
+            padding: 50px 60px;
+            text-align: center;
+        }
+        
+        .cta-title {
+            font-size: 28px;
+            font-weight: 900;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 50px;
+            border-radius: 35px;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.5);
+        }
+        
+        .cta-info {
+            margin-top: 25px;
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .cta-info strong {
+            color: #667eea;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="poster">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="hero-content">
+                <div class="program-badge">2025 인문사회 융합 AI 프로그램</div>
+                <h1 class="hero-title">HUSS-AI 융합<br>커리어 아카데미</h1>
+                <p class="hero-subtitle">당신의 미래 직업으로, 오늘의 사회문제를 해결하세요</p>
+                <p class="hero-description">
+                    인문사회 전공자를 위한 AI 기반 사회혁신 프로젝트<br>
+                    진로 연계 실무 경험 + AI 역량 강화 + 포트폴리오 구축
+                </p>
+            </div>
+        </div>
+
+        <!-- Concept Section -->
+        <div class="concept-section">
+            <h2 class="concept-title">🎯 프로그램 핵심 컨셉</h2>
+            
+            <div class="concept-highlight">
+                <div class="concept-main">
+                    "내가 되고 싶은 그 직업인이라면,<br>
+                    이 문제를 어떻게 해결할까?"
+                </div>
+                <div class="concept-sub">
+                    미래의 직업인 관점에서 AI를 활용하여<br>
+                    실제 사회문제를 해결하는 프로젝트를 기획·실행합니다
+                </div>
+            </div>
+            
+            <div class="flow-steps">
+                <div class="flow-step">
+                    <div class="flow-number">1</div>
+                    <div class="flow-text">희망 진로<br>선택</div>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="flow-number">2</div>
+                    <div class="flow-text">그 직업인으로<br>가정</div>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="flow-number">3</div>
+                    <div class="flow-text">AI 도구로<br>솔루션 설계</div>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="flow-number">4</div>
+                    <div class="flow-text">실제 결과물<br>제작</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="projects-section">
+            <div class="section-header">
+                <h2 class="section-title">대학별 프로젝트 × 진로 연계</h2>
+                <p class="section-subtitle">당신의 전공과 관심사에 맞는 프로젝트를 선택하세요</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- 성균관대 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <div class="project-university">🏛️ 성균관대학교</div>
+                            <div class="project-theme">대학별 세부 주제: 사회 갈등/통합</div>
+                        </div>
+                        <div class="career-badge">퍼실리테이터 / 갈등조정전문가</div>
+                    </div>
+                    
+                    <div class="project-content">
+                        <span class="role-label">💼 당신이 퍼실리테이터라면?</span>
+                        <p class="role-description">
+                            지역개발 갈등 현장에서 이해관계자들의 의견을 분석하고, 
+                            합의점을 도출하며, 중재 시뮬레이션을 진행하는 역할을 수행합니다.
+                        </p>
+                    </div>
+                    
+                    <div class="project-examples">
+                        <div class="examples-title">📌 프로젝트 예시</div>
+                        <div class="example-list">
+                            <span class="example-tag">AI 텍스트 분석으로 쟁점 도출</span>
+                            <span class="example-tag">갈등조정 챗봇 개발</span>
+                            <span class="example-tag">합의안 자동 생성 도구</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 가천대 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <div class="project-university">🌟 가천대학교</div>
+                            <div class="project-theme">대학별 세부 주제: 삶의 질 향상</div>
+                        </div>
+                        <div class="career-badge">웰니스 기획자 / 공공정책 분석가</div>
+                    </div>
+                    
+                    <div class="project-content">
+                        <span class="role-label">💼 당신이 웰니스 기획자라면?</span>
+                        <p class="role-description">
+                            지역주민의 생활 데이터를 분석하여 삶의 질을 높이는 정책을 제안하고,
+                            우선순위를 설정하여 실행 가능한 웰빙 프로그램을 기획합니다.
+                        </p>
+                    </div>
+                    
+                    <div class="project-examples">
+                        <div class="examples-title">📌 프로젝트 예시</div>
+                        <div class="example-list">
+                            <span class="example-tag">QoL 지표 분석 대시보드</span>
+                            <span class="example-tag">맞춤형 웰빙 추천 시스템</span>
+                            <span class="example-tag">정책 우선순위 제안서</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 충남대 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <div class="project-university">🌾 충남대학교</div>
+                            <div class="project-theme">대학별 세부 주제: 지역활성화</div>
+                        </div>
+                        <div class="career-badge">로컬 크리에이터 / 도시재생 코디</div>
+                    </div>
+                    
+                    <div class="project-content">
+                        <span class="role-label">💼 당신이 로컬 크리에이터라면?</span>
+                        <p class="role-description">
+                            소멸위기 지역의 숨은 매력을 발굴하고, AI를 활용해 관광 콘텐츠를 제작하며,
+                            유휴공간을 활성화하는 창의적인 전략을 수립합니다.
+                        </p>
+                    </div>
+                    
+                    <div class="project-examples">
+                        <div class="examples-title">📌 프로젝트 예시</div>
+                        <div class="example-list">
+                            <span class="example-tag">AI 관광 추천 시스템</span>
+                            <span class="example-tag">상권 분석 대시보드</span>
+                            <span class="example-tag">공간 활성화 시나리오</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 건양대 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <div class="project-university">🌏 건양대학교</div>
+                            <div class="project-theme">대학별 세부 주제: 다문화</div>
+                        </div>
+                        <div class="career-badge">다문화 교육 기획자 / 사회복지 매니저</div>
+                    </div>
+                    
+                    <div class="project-content">
+                        <span class="role-label">💼 당신이 다문화 교육 기획자라면?</span>
+                        <p class="role-description">
+                            다문화 가정의 정보 접근성을 높이고, 언어 장벽을 해소하며,
+                            문화적 이해를 증진시키는 교육 콘텐츠와 서비스를 개발합니다.
+                        </p>
+                    </div>
+                    
+                    <div class="project-examples">
+                        <div class="examples-title">📌 프로젝트 예시</div>
+                        <div class="example-list">
+                            <span class="example-tag">다국어 FAQ 챗봇</span>
+                            <span class="example-tag">문화 교육 콘텐츠 생성</span>
+                            <span class="example-tag">정보 접근성 개선 앱</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 한동대 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <div class="project-university">👴👶 한동대학교</div>
+                            <div class="project-theme">대학별 세부 주제: 저출산·고령화 대응</div>
+                        </div>
+                        <div class="career-badge">시니어 케어 기획자 / 인구정책 연구원</div>
+                    </div>
+                    
+                    <div class="project-content">
+                        <span class="role-label">💼 당신이 시니어 케어 기획자라면?</span>
+                        <p class="role-description">
+                            독거노인의 삶의 질을 향상시키고, 세대 간 소통을 촉진하며,
+                            저출산 문제에 대한 데이터 기반 정책 대안을 제시합니다.
+                        </p>
+                    </div>
+                    
+                    <div class="project-examples">
+                        <div class="examples-title">📌 프로젝트 예시</div>
+                        <div class="example-list">
+                            <span class="example-tag">AI 대화 동반자 챗봇</span>
+                            <span class="example-tag">세대 연결 플랫폼</span>
+                            <span class="example-tag">정책효과 시뮬레이션</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Impact Section -->
+        <div class="impact-section">
+            <h2 class="impact-title">✨ 이 프로그램으로 얻을 수 있는 것</h2>
+            
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <div class="impact-icon">🎓</div>
+                    <div class="impact-text">
+                        실무 중심<br>
+                        AI 역량
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-icon">💼</div>
+                    <div class="impact-text">
+                        진로 연계<br>
+                        포트폴리오
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-icon">🤝</div>
+                    <div class="impact-text">
+                        전문가<br>
+                        네트워킹
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-icon">🏆</div>
+                    <div class="impact-text">
+                        학술대회<br>
+                        발표 기회
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-icon">📜</div>
+                    <div class="impact-text">
+                        공식 인증<br>
+                        수료증
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-icon">💡</div>
+                    <div class="impact-text">
+                        사회문제 해결<br>
+                        경험
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2 class="cta-title">지금 바로 미래의 나를 경험하세요!</h2>
+            
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfNycLK-8rbd7_2Q_8eTAVp7rvkLkv_NYFaaAIwGBDxl_ovmQ/viewform?usp=header" target="_blank" class="cta-button">신청하기 →</a>
+            
+            <div class="cta-info">
+                <strong>📅 모집 기간:</strong> 2025년 11월 1일 ~ 11월 5일<br>
+                <strong>👥 모집 인원:</strong> 20명 (5개 대학 연합)<br>
+                <strong>💰 참가비:</strong> 전액 무료 (교육비, 멘토링, 활동비 지원)<br>
+                <strong>📍 교육 장소:</strong> 성균관대학교 (온·오프라인 병행)<br>
+                <strong>🎤 최종 발표:</strong> 12월 5일 한국정책학회 동계학술대회
+            </div>
+        </div>
+    </div>
+</body>
+</html>
